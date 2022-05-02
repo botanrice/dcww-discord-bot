@@ -20,12 +20,10 @@ const app = express();
 // Parse request body and verifies incoming requests using discord-interactions package
 app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 
-// Heroku must listen on specific port
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+
+app.get('/', async function (req, res) {
+  return res.send("Hello, World!");
+});
 
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
@@ -368,7 +366,13 @@ app.post('/interactions', async function (req, res) {
   }
 });
 
-app.listen(3000, () => {
+// Heroku must listen on specific port
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, () => {
   console.log('Listening on port 3000');
 
   // Check if guild commands from commands.json are installed (if not, install them)
