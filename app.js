@@ -20,6 +20,12 @@ const app = express();
 // Parse request body and verifies incoming requests using discord-interactions package
 app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
+
 /**
  * Interactions endpoint URL where Discord will send HTTP requests
  */
