@@ -17,10 +17,6 @@ import {
 
 // Create an express app
 const app = express();
-
-console.log("Starting App!");
-console.log(process.env.PUBLIC_KEY);
-
 // Parse request body and verifies incoming requests using discord-interactions package
 app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
 

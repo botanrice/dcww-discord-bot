@@ -20,11 +20,20 @@ git push heroku master
 heroku config:set MY_CUSTOM_VALUE=foobar
 ```
 
+
+#### Heroku Logging
+
+View live logs feed: 
+
+```
+heroku logs --tail
+```
+
 Helpful Heroku Links:
 
 * [Deploying Node.js Apps](https://devcenter.heroku.com/articles/deploying-nodejs)
 * [Node.js Best Practices](https://devcenter.heroku.com/articles/node-best-practices)
-
+* [Heroku Logging](https://devcenter.heroku.com/articles/logging#view-logs-with-the-heroku-cli)
 
 <br><hr><br>
 
