@@ -2,7 +2,31 @@
 
 *Work in Progress*
 
-<br>
+## Deploying with Heroku
+
+1. Push changes to personal Git repo
+2. Issue Heroku deployment
+
+```
+git add .
+git commit -m "new addition"
+git push -u origin master
+git push heroku master
+```
+
+#### How do I add environment variables?
+
+```
+heroku config:set MY_CUSTOM_VALUE=foobar
+```
+
+Helpful Heroku Links:
+
+* [Deploying Node.js Apps](https://devcenter.heroku.com/articles/deploying-nodejs)
+* [Node.js Best Practices](https://devcenter.heroku.com/articles/node-best-practices)
+
+
+<br><hr><br>
 
 # Getting Started app for Discord
 
